@@ -42,10 +42,10 @@ function calculateAverages() {
 
     subjects.forEach(subject => {
         const notes = [
-            parseFloat(document.getElementById(`${subject}_ap1`).value) || null,
-            parseFloat(document.getElementById(`${subject}_ap2`).value) || null,
-            parseFloat(document.getElementById(`${subject}_ap3`).value) || null
-        ].filter(n => n !== null); // Filtrar notas em branco
+            parseFloat(document.getElementById(`${subject}_ap1`).value),
+            parseFloat(document.getElementById(`${subject}_ap2`).value),
+            parseFloat(document.getElementById(`${subject}_ap3`).value)
+        ].filter(n => !isNaN(n)); // Filtrar notas em branco
 
         let bonus = 0;
         const bonusSelect = document.getElementById(`${subject}_bonus`);
@@ -69,9 +69,9 @@ function calculateAverages() {
         const neededFor8 = Math.max(0, (8 - averageWeighted) / 0.6);
 
         resultsHTML += `
-            <p>${subject}: Média de AP das ${notes.length} notas${bonus ? ' COM PONTO BÔNUS' : ''}${gipValue ? ' E GIP' : ''}: ${averageWithGIP.toFixed(2)}<br>
-            Você precisa de ${neededFor6.toFixed(2)} pontos na AE para passar com média 6<br>
-            Você precisa de ${neededFor8.toFixed(2)} pontos na AE para pegar Alamar.</p>
+            <p>${subject}: Média de AP das ${notes.length} notas${bonus ? ' COM PONTO BÔNUS' : ''}${gipValue ? ' E GIP' : ''}: ${averageWithGIP.toFixed(1)}<br>
+            Você precisa de ${neededFor6.toFixed(1)} pontos na AE para passar com média 6<br>
+            Você precisa de ${neededFor8.toFixed(1)} pontos na AE para pegar Alamar.</p>
         `;
     });
 
