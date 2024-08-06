@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Médias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Calculadora de Médias</h1>
+
+    <p><strong>Aviso:</strong> O ponto bônus é adicionado à média das notas, não a uma nota individual.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Matéria</th>
+                <th>Nota - AP1</th>
+                <th>Nota - AP2</th>
+                <th>Nota - AP3</th>
+                <th>Ponto Bônus</th>
+            </tr>
+        </thead>
+        <tbody id="subject-entries">
+            <!-- Matérias e campos de entrada de notas serão gerados aqui -->
+        </tbody>
+    </table>
+    
+    <label for="gip">Você recebe ponto GIP?</label>
+    <select id="gip">
+        <option value="0">Não recebo GIP</option>
+        <option value="0.5">Eu recebo 0,5 pontos de GIP</option>
+        <option value="1">Eu recebo 1 ponto de GIP</option>
+    </select>
+
+    <button onclick="calculateAverages()">Calcular Médias</button>
+    
+    <div id="results">
+        <!-- Resultados serão exibidos aqui -->
+    </div>
+
+    <p><strong>Aviso:</strong> Se a segunda casa decimal for 5 ou mais, arredonde a primeira casa decimal para cima. Se for 4 ou menos, mantenha.</p>
+    <p>Feito por Gabriel Melo</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
